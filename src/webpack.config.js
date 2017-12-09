@@ -7,14 +7,14 @@ module.exports = {
     path: path.join(__dirname, "../public/js"),
     filename: "index.js"
   },
-  // module: {
-  //   rules [
-  //     {
-  //       test: /\.less$/,
-  //       use: ["style-loader", "css-loader", "less-loader"]
-  //     }
-  //   ]
-  // },
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"]
+      }
+    ]
+  },
   resolve: {
     alias: {
       jquery: path.join(__dirname, "js/lib/jquery-3.2.1.min.js"),

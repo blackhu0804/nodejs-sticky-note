@@ -1,3 +1,5 @@
+require('less/toast.less')
+
 
 function toast(msg, time) {
   this.msg = msg;

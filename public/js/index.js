@@ -75,8 +75,7 @@ Toast('hello');
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $ = __webpack_require__(2)
-
+/* WEBPACK VAR INJECTION */(function($) {
 function toast(msg, time) {
   this.msg = msg;
   this.dismissTime = time || 1000;
@@ -108,6 +107,7 @@ function Toast(msg, time) {
 
 
 module.exports.Toast = Toast;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 2 */

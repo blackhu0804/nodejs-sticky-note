@@ -1,4 +1,3 @@
-var $ = require('../lib/jquery-3.2.1.min')
 
 function toast(msg, time) {
   this.msg = msg;

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "webpack": "webpack --config=src/webpack.config.js"
+    "webpack": "webpack --config=src/webpack.config.js --watch"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

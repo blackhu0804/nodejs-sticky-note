@@ -1,6 +1,6 @@
 var a = require('./a').a;
 
 module.exports = {
-  b: 'bbbb',
+  b: 'bb',
   a: a
 }

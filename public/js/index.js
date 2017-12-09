@@ -78,7 +78,7 @@ console.log(obj);
 var a = __webpack_require__(2).a;
 
 module.exports = {
-  b: 'bbbb',
+  b: 'bb',
   a: a
 }
 

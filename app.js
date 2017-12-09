@@ -22,6 +22,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/stylesheets/style.css', function(req, res) {
+  res.send('get style.css////');
+  console.log('get style.css.....');
+})
+
+app.use('/student', function(req, res, next) {
+  res.send('hello ruoyu');
+})
 app.use('/', index);
 app.use('/users', users);
 

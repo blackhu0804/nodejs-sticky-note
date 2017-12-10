@@ -1,6 +1,6 @@
 require('less/index.less');
 
-var NoteManager = require('../module/note-manager.js');
+var NoteManager = require('../module/note-manager.js').NoteManager;
 var Event = require('../module/event.js');
 var WaterFall = require('../module/waterfall.js');
 

@@ -2,7 +2,7 @@ var EventCenter = (function(){
   var events = {};
 
   function on(evt, handler){
-    events[evt] = event[evt] || [];
+    events[evt] = events[evt] || [];
 
     events[evt].push({
       handler: handler

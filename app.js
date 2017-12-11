@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -31,7 +31,8 @@ app.use('/student', function(req, res, next) {
   res.send('hello ruoyu');
 })
 app.use('/', index);
-app.use('/users', users);
+//app.use('/users', users);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

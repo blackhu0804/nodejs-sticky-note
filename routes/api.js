@@ -1,11 +1,16 @@
-//import { func } from '../../../.cache/typescript/2.6/node_modules/@types/assert-plus';
-
 var express = require('express');
 var router = express.Router();
+var Note = require('../model/note').Note;
 
 /* GET users listing. */
 router.get('/notes', function(req, res, next) {
-  res.send('respond with a abc');
+  Note.findAll({raw: true}).then( (notes) => {
+    res.send({
+      status: 0,
+      data: notes
+    })
+  });
+  
 });
 
 router.post('/notes/add', function(req, res, next) {

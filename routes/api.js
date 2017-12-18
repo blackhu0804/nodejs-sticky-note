@@ -14,6 +14,10 @@ router.get('/notes', function(req, res, next) {
 });
 
 router.post('/notes/add', function(req, res, next) {
+  if(!req.session.user){
+    return res.send({status: 1, errorMsg: '请登录'});
+  }
+  
   var note = req.body.note;
   Note.create({text: note}).then( () => {
     res.send({status: 0})
@@ -24,6 +28,10 @@ router.post('/notes/add', function(req, res, next) {
 })
 
 router.post('/notes/edit', function(req, res, next) {
+  if(!req.session.user){
+    return res.send({status: 1, errorMsg: '请登录'});
+  }
+  
   Note.update({text: req.body.note}, {where: {id: req.body.id}}).then( () => {
     res.send({status: 0});
   }).catch( () => {
@@ -32,6 +40,10 @@ router.post('/notes/edit', function(req, res, next) {
 })
 
 router.post('/notes/delete', function(req, res, next) {
+  if(!req.session.user){
+    return res.send({status: 1, errorMsg: '请登录'});
+  }
+
   Note.destroy({where: {id: req.body.id}}).then( () => {
     res.send({status: 0})
   }).catch( () => {

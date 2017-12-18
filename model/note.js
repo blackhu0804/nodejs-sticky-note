@@ -20,9 +20,13 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 const Note = sequelize.define('notes', {
   text: {
     type: Sequelize.STRING
+  },
+  uid: {
+    type: Sequelize.STRING
   }
 });
 
+//Note.sync({force: true});  //重新初始化数据库
 // Note.sync().then( () => {
 //   return Note.create({text: 'hello black'});  
 // }).then(function(){

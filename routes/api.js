@@ -4,7 +4,15 @@ var Note = require('../model/note').Note;
 
 /* GET users listing. */
 router.get('/notes', function(req, res, next) {
-  Note.findAll({raw: true}).then( (notes) => {
+
+  var query = {raw: true};
+  if(req.session.user) {
+    query.where = {
+      uid: req.session.user.id
+    }
+  }
+
+  Note.findAll(query).then( (notes) => {
     res.send({
       status: 0,
       data: notes

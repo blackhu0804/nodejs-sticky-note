@@ -34,7 +34,6 @@ router.get('/github', passport.authenticate('github'));
 router.get('/github/callback',
 passport.authenticate('github', { failureRedirect: '/login' }),
 function(req, res) {
-  console.log('success....');
   req.session.user = {
     id: req.user.id,
     username: req.user.displayName || req.user.username,
